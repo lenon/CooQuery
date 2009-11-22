@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+	<title>CooQuery - Cookies with jQuery</title>
+	
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="robots" content="index, follow" />
+	
+	<meta name="description" content="CooQuery, um plugin para criar, editar e excluir cookies usando o framework jQuery (JavaScript)." />
+	<meta name="keywords" content="jQuery, plugin, cookies, javascript, CooQuery, editar, excluir, framework, cookie" />
+	<meta name="author" content="Lenon Marcel" />
+	
+	<link rel="stylesheet" href="css/default.css" type="text/css" />
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+	<script src="js/cooquery.jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#ex_1').click(function(){
+				alert("Cookie criado:\n" + $.set_cookie('teste','Isto é um teste'));
+			});
+			$('#ex_2').click(function(){
+				var val = $.read_cookie('teste');
+				if(val !== null) alert("O valor do cookie é: \n" + val);
+				else alert('O cookie não existe');
+			});
+			$('#ex_3').click(function(){
+				$.delete_cookie('teste');
+				alert('Cookie deletado');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1><a href="index.html"><img src="images/CooQuery-logo.png" alt="CooQuery" title="Index" /></a> Leia, escreva, edite e delete cookies usando jQuery</h1>
+		</div>
+		<div id="content">
+			<h2>O que é?</h2>
+			<p>O CooQuery é um plugin pra jQuery (JavaScript) que ajuda no trabalho de criar, editar e apagar cookies.</p>
+			<h2>Funciona em quais navegadores?</h2>
+			<p>É compatível com a maioria dos navegadores atuais (e o IE6):</p>
+			<ul>
+				<li>Firefox</li>
+				<li>Opera</li>
+				<li>Google Chrome</li>
+				<li>Internet Explorer (6+)</li>
+			</ul>
+			<h2>Exemplos:</h2>
+			<ol>
+				<li>Criar um cookie chamado 'teste', com valor 'estamos testando':<br/>
+					<button id="ex_1">Criar cookie</button>
+				</li>
+				<li>Ler o valor do cookie 'teste':<br/>
+					<button id="ex_2">Ler cookie</button>
+				</li>
+				<li>Apagar o cookie 'teste':<br/>
+					<button id="ex_3">Apagar cookie</button>
+				</li>
+			</ol>
+			<h2>Como usar</h2> 
+			<h4>Função para criar/setar um cookie:</h4> 
+			<code>$.set_cookie(NOME[,VALOR,EXPIRAÇÃO,CAMINHO,DOMÍNIO,SEGURO])</code>
+			<small>Nota: o valor de EXPIRAÇÃO é em dias.</small>
+			<h4>Deletar um cookie:</h4>
+			<code>$.delete_cookie(NOME)</code>
+			<h4>Ler o valor de um cookie</h4>
+			<code>$.read_cookie(NOME)</h4>
+			<h2>Repositório no Github</h2>
+			<p>Todo o código fonte (inclusive esta página de ajuda) está <a href="http://github.com/lenon/CooQuery">disponível no Github</a>.</p>
+			<h2>Download</h2>
+			<a href="js/cooquery.jquery.js">Versão normal</a> ou <a href="js/cooquery.jquery.min.js">versão compactada</a>.
+			<h2>Doações</h2>
+			<p>Doações incentivam muito nosso trabalho e ajudam a cobrir os custos (com o café principalmente :D). Se você deseja doar alguma quantia (qualquer quantia), pode usar um dos botões abaixo:</p>
+			<span style="text-align:center;">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<p><input type="hidden" name="cmd" value="_s-xclick"/>
+				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----"/>
+				<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+				<img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1"/></p>
+			</form>
+			<form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/doacao.jhtml" method="post">
+				<p><input type="hidden" name="email_cobranca" value="lenon.marcel@gmail.com"/>
+				<input type="hidden" name="moeda" value="BRL">
+				<input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacao/FacaSuaDoacao.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!"/></p>
+			</form>
+			</span>
+			<h2>Como entrar em contato</h2>
+			<p>Você pode entrar em contato através do email contato(at)lenonmarcel.com.br. Ou através do <a href="http://twitter.com/lenonm">meu Twitter</a>.</p>
+			<h4>Enjoy. :)</h4>
+		</div>
+		<div id="footer">
+			
+		</div>
+	</div>
+</body>
+</html>
