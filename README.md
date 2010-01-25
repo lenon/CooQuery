@@ -20,28 +20,33 @@ CooQuery is compatible with the most of modern browsers, and also Internet Explo
 Examples
 ========
 1. Set a new cookie, named "test cookie", with value "This is a test cookie":
-    <pre>`$('#example1').click(function(){
-        var cookie = $.setCookie('test cookie', 'This is a test cookie', {
-            duration: 10 // in days
+
+        $('#example1').click(function(){
+            var cookie = $.setCookie('test cookie', 'This is a test cookie', {
+                duration: 10 // in days
+            });
+            if(cookie)
+                alert('Cookie created!');
+            else
+                alert('Oops, an error occurred.');
         });
-        if(cookie)
-            alert('Cookie created!');
-        else
-            alert('Oops, an error occurred.');
-});`</pre>
+
 2. Read value of cookie "test cookie":
-    <pre>`$('#example2').click(function(){
-        var value = $.readCookie('test cookie');
-        if( value )
-            alert( "Hey! This cookie exists, and their value is : \\n" + value );
-        else
-            alert( 'This cookie \'non ecziste\'!' );
-});`</pre>
+
+        $('#example2').click(function(){
+            var value = $.readCookie('test cookie');
+            if( value )
+                alert( "Hey! This cookie exists, and their value is : \\n" + value );
+            else
+                alert( 'This cookie \'non ecziste\'!' );
+        });
+
 3. Delete cookie "test cookie":
-    <pre>`$('#example3').click(function(){
-        var value = $.delCookie('test cookie');
-        alert( "This cookie does not exist anymore \\\o/");
-});`</pre>
+
+        $('#example3').click(function(){
+            var value = $.delCookie('test cookie');
+            alert( "This cookie does not exist anymore \\\o/");
+        });
 
 Usage
 =====
