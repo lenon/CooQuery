@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 <head>
-  <title>CooQuery - Cookies with jQuery</title>
+  <title>CooQuery - Cookies com jQuery</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <meta name="robots" content="index, follow"/>
   <meta name="description" content="CooQuery, a jQuery plugin for create, edit, read and manage cookies"/>
@@ -18,17 +18,17 @@
 <body>
 <div id="container">
   <div id="header">
-      <h1><a href="index.html"><img src="images/CooQuery-logo.png" alt="CooQuery" title="Index" /></a> A jQuery plugin for create, edit, read and manage cookies</h1>
+      <h1><a href="index.html"><img src="images/CooQuery-logo.png" alt="CooQuery" title="Index" /></a> Um plugin jQuery para editar, ler e gerenciar cookies</h1>
   </div>
-  <p style="text-align: right;"><small><a href="index_pt-BR.html"><em>Versão em Português (Brasil) &rarr;</em></a></small></p>
+  <p style="text-align: right;"><small><a href="index.html"><em>English version of this page &rarr;</em></a></small></p>
   <div id="content">
-    <h2>What is it?</h2>
+    <h2>O que é?</h2>
       <p>
-        The CooQuery is a jQuery plugin that helps the work of manage, edit, create and delete cookies.
+        O CooQuery é um plugin pra jQuery que ajuda no trabalho de gerenciar, editar, criar e deletar cookies.
       </p>
-    <h2>It works in which browsers?</h2>
+    <h2>Funciona em quais navegadores?</h2>
       <p>
-        CooQuery is compatible with the most of modern browsers, and also Internet Explorer 6:
+        CooQuery é compatível com a maioria dos navegadores modernos, e também o Internet Explorer 6:
       </p>
       <ul>
         <li>Firefox</li>
@@ -36,66 +36,66 @@
         <li>Google Chrome</li>
         <li>Internet Explorer (6+)</li>
       </ul>
-    <h2>Examples:</h2>
+    <h2>Exemplos:</h2>
       <ol>
         <li>
           <p>
-            Set a new cookie, named "test cookie", with value "This is a test cookie":<br/>
-            <button id="example1">Set cookie</button>
+            Setar um novo cookie, chamado "test cookie", com o valor "This is a test cookie":<br/>
+            <button id="example1">Setar cookie</button>
           </p>
 <pre class="sh_javascript">$('#example1').click(function(){
   var cookie = $.setCookie('test cookie', 'This is a test cookie', {
     duration: 10 // in days
   });
   if(cookie)
-    alert('Cookie created!');
+    alert('Cookie criado!');
   else
-    alert('Oops, an error occurred.');
+    alert('Ops, ocorreu um erro.');
 });</pre>
         </li>
         <li>
           <p>
-            Read value of cookie "test cookie":<br/>
-            <button id="example2">Read cookie value</button>
+            Ler o valor do cookie "test cookie":<br/>
+            <button id="example2">Ler valor do cookie</button>
           </p>
 <pre class="sh_javascript">$('#example2').click(function(){
   var value = $.readCookie('test cookie');
   if( value )
-    alert( "Hey! This cookie exists, and their value is : \n" + value );
+    alert( "Hey! O cookie existe, e seu valor é: \n" + value );
   else
-    alert( 'This cookie \'non ecziste\'!' );
+    alert( 'O cookie \'non ecziste\'!' );
 });</pre>
         </li>
         <li>
           <p>
-            Delete cookie "test cookie":
-            <button id="example3">Delete cookie</button>
+            Deletar o cookie "test cookie":
+            <button id="example3">Deletar cookie</button>
           </p>
 <pre class="sh_javascript">$('#example3').click(function(){
   var value = $.delCookie('test cookie');
-  alert( "This cookie does not exist anymore \\o/");
+  alert( "Este cookie já não existe mais \\o/");
 });</pre>
         </li>
       </ol>
-    <h2>Usage</h2>
-      <h4>Create/set a cookie:</h4>
-<pre class="sh_javascript">$.setCookie( 'NAME', 'VALUE', {
-  duration : 1, // In days
+    <h2>Como usar</h2>
+      <h4>Criar/setar um cookie:</h4>
+<pre class="sh_javascript">$.setCookie( 'NOME', 'VALOR', {
+  duration : 1, // Em dias
   path : '',
   domain : '',
   secure : false
 });</pre>
-    <h4>Delete a cookie:</h4>
-      <pre class="sh_javascript">$.delCookie( 'NAME' );</pre>
-    <h4>Read cookie value:</h4>
-      <pre class="sh_javascript">$.readCookie( 'NAME' );</pre>
-    <h2>GitHub repository:</h2>
-      <p>All CooQuery source code (including this usage page) is <a href="http://github.com/lenon/CooQuery">available on Github</a>.</p>
+    <h4>Deletar um cookie:</h4>
+      <pre class="sh_javascript">$.delCookie( 'NOME' );</pre>
+    <h4>Ler o valor de um cookie:</h4>
+      <pre class="sh_javascript">$.readCookie( 'NOME' );</pre>
+    <h2>Repositório no GitHub:</h2>
+      <p>Todo o código fonte do CooQuery (inclusive esta página) está <a href="http://github.com/lenon/CooQuery">disponível no Github</a>.</p>
     <h2>Download:</h2>
-      <p>Choose: <a href="js/jquery.cooquery.js">Uncompressed</a> or <a href="js/cooquery.jquery.min.js">minified version</a>.</p>
-    <h2>Donate:</h2>
+      <p>Escolha: <a href="js/jquery.cooquery.js">Descompactada</a> ou <a href="js/cooquery.jquery.min.js">versão compactada</a>.</p>
+    <h2>Faça uma doação:</h2>
       <p>
-        I need your support. If you like <a href="http://github.com/lenon/">my projects</a>, please make me a donation. :)
+        Eu preciso do seu apoio. Se você gosta de <a href="http://github.com/lenon/">meus projetos</a>, por favor faça uma doação. :)
       </p>
       <div style="text-align:center;">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -114,12 +114,12 @@
           </p>
         </form>
       </div>
-    <h2>Contact:</h2>
+    <h2>Entre em contato:</h2>
       <p>
-        You can contact me through my email address: <em>lenon.marcel ~a~ gmail.com</em>. 
-        Or through <a href="http://twitter.com/lenonm">my Twitter</a>.
+        Você pode entrar em contato comigo através do meu email: <em>lenon.marcel ~a~ gmail.com</em>.
+        Ou através do <a href="http://twitter.com/lenonm">meu Twitter</a>.
       </p>
-    <h4>Enjoy. :)</h4>
+    <h4>Faça bom uso. :)</h4>
   </div>
 </div>
 <script type="text/javascript">//<![CDATA[
