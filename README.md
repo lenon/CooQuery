@@ -1,7 +1,8 @@
 
 CooQuery 3
 ======================
-[Homepage](http://lenonmarcel.com.br/code/cooquery), by [Lenon Marcel](http://lenonmarcel.com.br/)
+By [Lenon Marcel](http://lenonmarcel.com.br/)
+[Homepage](http://lenonmarcel.com.br/code/cooquery)
 
 Usage
 ========
