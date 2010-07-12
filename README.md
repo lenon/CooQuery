@@ -15,7 +15,7 @@ Usage
 
 3. Delete cookie:
 
-        cookie.delete( name );
+        cookie.del( name );
 
 4. Options:
 
