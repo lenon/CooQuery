@@ -1,136 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
 <head>
-  <title>CooQuery - Cookies with jQuery</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-  <meta name="robots" content="index, follow"/>
-  <meta name="description" content="CooQuery, a jQuery plugin for create, edit, read and manage cookies"/>
-  <meta name="keywords" content="jQuery, plugin, cookies, javascript, CooQuery, edit, delete, create, write"/>
-  <meta name="author" content="Lenon Marcel"/>
-  <link rel="stylesheet" type="text/css" href="css/default.css"/>
-  <link rel="stylesheet" type="text/css" href="css/sh_style.css"/>
-  <script type="text/javascript" src="js/sh_main.min.js"></script>
-  <script type="text/javascript" src="js/sh_javascript.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jquery.cooquery.js"></script>
-  <script type="text/javascript" src="js/example.js"></script>
+    <meta charset="UTF-8"/>
+    <title>CooQuery - Cookies with JavaScript</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="cooquery.min.js"></script>
+    <script type="text/javascript" src="example.js"></script>
 </head>
 <body>
-<div id="container">
-  <div id="header">
-      <h1><a href="index.html"><img src="images/CooQuery-logo.png" alt="CooQuery" title="Index" /></a> A jQuery plugin for create, edit, read and manage cookies</h1>
-  </div>
-  <p style="text-align: right;"><small><a href="index_pt-BR.html"><em>Versão em Português (Brasil) &rarr;</em></a></small></p>
-  <div id="content">
-    <h2>What is it?</h2>
-      <p>
-        The CooQuery is a jQuery plugin that helps the work of manage, edit, create and delete cookies.
-      </p>
-    <h2>It works in which browsers?</h2>
-      <p>
-        CooQuery is compatible with the most of modern browsers, and also Internet Explorer 6:
-      </p>
-      <ul>
-        <li>Firefox</li>
-        <li>Opera</li>
-        <li>Google Chrome</li>
-        <li>Internet Explorer (6+)</li>
-      </ul>
-    <h2>Examples:</h2>
-      <ol>
-        <li>
-          <p>
-            Set a new cookie, named "test cookie", with value "This is a test cookie":<br/>
-            <button id="example1">Set cookie</button>
-          </p>
-<pre class="sh_javascript">$('#example1').click(function(){
-  var cookie = $.setCookie('test cookie', 'This is a test cookie', {
-    duration: 10 // in days
-  });
-  if(cookie)
-    alert('Cookie created!');
-  else
-    alert('Oops, an error occurred.');
-});</pre>
-        </li>
-        <li>
-          <p>
-            Read value of cookie "test cookie":<br/>
-            <button id="example2">Read cookie value</button>
-          </p>
-<pre class="sh_javascript">$('#example2').click(function(){
-  var value = $.readCookie('test cookie');
-  if( value )
-    alert( "Hey! This cookie exists, and their value is : \n" + value );
-  else
-    alert( 'This cookie \'non ecziste\'!' );
-});</pre>
-        </li>
-        <li>
-          <p>
-            Delete cookie "test cookie":
-            <button id="example3">Delete cookie</button>
-          </p>
-<pre class="sh_javascript">$('#example3').click(function(){
-  var value = $.delCookie('test cookie');
-  alert( "This cookie does not exist anymore \\o/");
-});</pre>
-        </li>
-      </ol>
-    <h2>Usage</h2>
-      <h4>Create/set a cookie:</h4>
-<pre class="sh_javascript">$.setCookie( 'NAME', 'VALUE', {
-  duration : 1, // In days
-  path : '',
-  domain : '',
-  secure : false
-});</pre>
-    <h4>Delete a cookie:</h4>
-      <pre class="sh_javascript">$.delCookie( 'NAME' );</pre>
-    <h4>Read cookie value:</h4>
-      <pre class="sh_javascript">$.readCookie( 'NAME' );</pre>
-    <h2>GitHub repository:</h2>
-      <p>All CooQuery source code (including this usage page) is <a href="http://github.com/lenon/CooQuery">available on Github</a>.</p>
-    <h2>Download:</h2>
-      <p>Choose: <a href="js/jquery.cooquery.js">Uncompressed</a> or <a href="js/jquery.cooquery.min.js">minified version</a>.</p>
-    <h2>Donate:</h2>
-      <p>
-        I need your support. If you like <a href="http://github.com/lenon/">my projects</a>, please make me a donation. :)
-      </p>
-      <div style="text-align:center;">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-          <p>
-            <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----"/>
-            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-            <img src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" alt=""/>
-          </p>
-        </form>
-        <form action="https://pagseguro.uol.com.br/checkout/doacao.jhtml" method="post" target="pagseguro">
-          <p>
-            <input type="hidden" name="email_cobranca" value="lenon.marcel@gmail.com"/>
-            <input type="hidden" name="moeda" value="BRL"/>
-            <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacao/FacaSuaDoacao.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!"/>
-          </p>
-        </form>
-      </div>
-    <h2>Contact:</h2>
-      <p>
-        You can contact me through my email address: <em>lenon.marcel ~a~ gmail.com</em>. 
-        Or through <a href="http://twitter.com/lenonm">my Twitter</a>.
-      </p>
-    <h4>Enjoy. :)</h4>
-  </div>
+<div id="wrap">
+    <h1>CooQuery test</h1>
+    <p>
+        <label for="name">Name:</label>
+        <input id="name" value="hey" />
+    </p>
+    <p>
+        <label for="value">Value:</label>
+        <input id="value" value="ho" />
+    </p>
+    <p>
+        <label for="domain">Domain:</label>
+        <input id="domain" />
+    </p>
+    <p>
+        <label for="path">Path:</label>
+        <input id="path" />
+    </p>
+    <p>
+        <label for="duration">Duration:</label>
+        <input id="duration" size="3"/> days
+    </p>
+    <p>
+        <input id="secure" type="checkbox" value="0" />
+        <label for="secure">Secure</label>
+    </p>
+    <p>
+        <button id="btn1">Set</button>
+        <button id="btn2">Get</button>
+        <button id="btn3">Delete</button>
+    </p>
 </div>
-<script type="text/javascript">//<![CDATA[
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-//]]></script>
-<script type="text/javascript">//<![CDATA[
-try{
-var pageTracker = _gat._getTracker("UA-10589745-4");
-pageTracker._trackPageview();
-}catch(err){}
-//]]></script>
 </body>
 </html>
