@@ -1,6 +1,6 @@
 /*!
  * CooQuery v3
- * http://lenonmarcel.com.br/projetos/cooquery
+ * http://lenonmarcel.com.br/code/cooquery
  *
  * Copyright 2009, 2010 Lenon Marcel
  * Licensed under the MIT license.
