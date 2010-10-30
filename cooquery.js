@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  *
- * Date: 30-10-2010 (October 30, 2010)
+ * Date: 10-30-2010 (October 30, 2010)
  */
 
 var cookie = {
