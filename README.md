@@ -1,28 +1,41 @@
-CooQuery 3
-======================
-By [Lenon Marcel](http://lenonmarcel.com.br/) | [Homepage](http://lenonmarcel.com.br/code/cooquery)
+# CooQuery 3.2
+Create, edit and manage cookies with JavaScript.
 
-Usage
-========
+# Usage
+
 1. Set a new cookie:
 
-        cookie.set( name , value [, options ]);
+        cookie.set("my_cookie" , "hello");
+        cookie.set("my_second_cookie", "hi", {
+            duration : 2 // days
+        });
+
+   Options are:
+
+        {
+            duration : 1, // in days
+            path : '',
+            domain : '',
+            secure : false
+        }
 
 2. Read the value of a cookie:
 
-        cookie.read( name );
+        cookie.get("my_cookie"); // returns "hello"
+        cookie.get("noecziste"); // returns undefined
 
-3. Delete cookie:
+3. Delete a cookie:
 
-        cookie.del( name );
-
-4. Options:
-
-        {
-            duration : 1, // int, in days
-            path : '', // string
-            domain : '', // string
-            secure : false // bool
-        }
+        cookie.del("my_cookie");
 
 *That is it. :)*
+
+## Running tests
+
+First, you need [node.js](http://nodejs.org/) and [npm](http://npmjs.org/) installed.
+Then...
+
+    git clone git://github.com/lenon/CooQuery.git
+    cd CooQuery
+    npm install jasmine-node -g
+    jasmine-node spec/
