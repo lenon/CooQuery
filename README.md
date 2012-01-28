@@ -10,7 +10,7 @@ Create, edit and manage cookies with JavaScript.
             duration : 2 // days
         });
 
-   Options are:
+    Options are:
 
         {
             duration : 1, // in days
