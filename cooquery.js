@@ -11,8 +11,7 @@
 (function(window){
     var cookie = {
         set : function(name, value, opts) {
-            if (!opts)
-                opts = {};
+            opts = opts || {};
 
             var line = name + '=' + encodeURIComponent(value);
 
@@ -35,8 +34,12 @@
             return window.document.cookie = line + ";";
         },
 
-        del : function(name) {
-            return cookie.set(name, '', {duration: -1});
+        del : function(name, opts) {
+            opts = opts || {};
+            
+            opts.duration = -1;
+
+            return cookie.set(name, '', opts);
         },
 
         // Based on Mootools Cookie.read
