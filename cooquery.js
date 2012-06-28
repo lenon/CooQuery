@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  *
- * Date: 28-01-2012 (January 28, 2012)
+ * Date: 28-06-2012 (June 28, 2012)
  */
 (function(window){
     var cookie = {
@@ -46,7 +46,7 @@
                 '(?:^|;)\\s*' + name.replace(/([-.*+?^${}()|[\]\/\\])/g, '\\$1') + '=([^;]*)'
             );
 
-            return search ? decodeURIComponent(search[1]) : undefined;
+            return search ? decodeURIComponent((search[1] + '').replace(/\+/g, '%20')) : undefined;
         }
     };
 
