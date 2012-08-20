@@ -91,5 +91,30 @@ describe("window.cookie", function(){
                 "my_cookie=; expires=Fri, 27 Jan 2012 03:58:43 GMT;" // ... :)
             );
         });
+
+        it("calls set() with optional path and/or domain", function(){
+            window.document.cookie = "my_cookie=value; domain=domain.com; path=\/;";
+
+            spyOn(window.cookie, "set").andCallThrough();
+
+            spyOn( Date.prototype, "getTime").andCallFake(function(){
+                return 1327723123330; // Sat, 28 Jan 2012 03:58:43 GMT ...
+            });
+
+            window.cookie.del("my_cookie", {
+                domain: "domain.com",
+                path:   "/"
+            });
+
+            expect( window.cookie.set ).toHaveBeenCalledWith("my_cookie", "", {
+                domain:     "domain.com",
+                path:       "/",
+                duration :  -1 // ... minus 1 day ...
+            });
+
+            expect( window.document.cookie ).toEqual(
+                "my_cookie=; domain=domain.com; path=\/; expires=Fri, 27 Jan 2012 03:58:43 GMT;" // ... :)
+            );
+        });
     });
 });
