@@ -64,6 +64,13 @@ describe("window.cookie", function(){
             expect( window.cookie.get("my_other_cookie") ).toEqual("value with spaces e áéáóíú");
             expect( window.cookie.get("foo") ).toEqual("bar");
         });
+
+        it("return a cookie value with badly encoded spaces", function(){
+            window.document.cookie = "my_other_cookie=value+with+spaces+e+%C3%A1%C3%A9%C3%A1%C3%B3%C3%AD%C3%BA; foo=bar;";
+
+            expect( window.cookie.get("my_other_cookie") ).toEqual("value with spaces e áéáóíú");
+            expect( window.cookie.get("foo") ).toEqual("bar");
+        });
     });
 
     describe("del", function(){
