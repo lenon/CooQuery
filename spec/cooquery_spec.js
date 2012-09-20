@@ -64,6 +64,13 @@ describe("window.cookie", function(){
             expect( window.cookie.get("my_other_cookie") ).toEqual("value with spaces e áéáóíú");
             expect( window.cookie.get("foo") ).toEqual("bar");
         });
+
+        it("return a cookie value with badly encoded spaces", function(){
+            window.document.cookie = "my_other_cookie=value+with+spaces+e+%C3%A1%C3%A9%C3%A1%C3%B3%C3%AD%C3%BA; foo=bar;";
+
+            expect( window.cookie.get("my_other_cookie") ).toEqual("value with spaces e áéáóíú");
+            expect( window.cookie.get("foo") ).toEqual("bar");
+        });
     });
 
     describe("del", function(){
@@ -82,6 +89,31 @@ describe("window.cookie", function(){
 
             expect( window.document.cookie ).toEqual(
                 "my_cookie=; expires=Fri, 27 Jan 2012 03:58:43 GMT;" // ... :)
+            );
+        });
+
+        it("calls set() with optional path and/or domain", function(){
+            window.document.cookie = "my_cookie=value; domain=domain.com; path=\/;";
+
+            spyOn(window.cookie, "set").andCallThrough();
+
+            spyOn( Date.prototype, "getTime").andCallFake(function(){
+                return 1327723123330; // Sat, 28 Jan 2012 03:58:43 GMT ...
+            });
+
+            window.cookie.del("my_cookie", {
+                domain: "domain.com",
+                path:   "/"
+            });
+
+            expect( window.cookie.set ).toHaveBeenCalledWith("my_cookie", "", {
+                domain:     "domain.com",
+                path:       "/",
+                duration :  -1 // ... minus 1 day ...
+            });
+
+            expect( window.document.cookie ).toEqual(
+                "my_cookie=; domain=domain.com; path=\/; expires=Fri, 27 Jan 2012 03:58:43 GMT;" // ... :)
             );
         });
     });
