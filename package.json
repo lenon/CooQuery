@@ -1,0 +1,10 @@
+{
+  "name" : "CooQuery",
+  "version" : "3.3.0",
+  "dependencies": {
+    "jasmine-node": "1.0.26"
+  },
+  "scripts": {
+    "test": "jasmine-node spec/"
+  }
+}
