@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/lenon/CooQuery.png)](http://travis-ci.org/lenon/CooQuery)
+
 # CooQuery 3.2
 Create, edit and manage cookies with JavaScript.
 
